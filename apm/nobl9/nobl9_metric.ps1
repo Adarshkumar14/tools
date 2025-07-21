@@ -18,7 +18,6 @@ if (-not (Get-Command "jq.exe" -ErrorAction SilentlyContinue)) {
     New-Item -ItemType Directory -Path $jqDir -Force | Out-Null
   }
 
-  Write-Host "Downloading latest jq executable to $jqPath..."
   Invoke-WebRequest -Uri $url -OutFile $jqPath -UseBasicParsing
 
   if (-not (Test-Path $jqPath)) {
